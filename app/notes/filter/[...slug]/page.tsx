@@ -1,4 +1,5 @@
 import css from "./NoteClient.module.css";
+import type { Metadata } from 'next';
 import NoteListClient from "./Notes.client";
 import { fetchNotes } from "@/lib/api";
 import {
@@ -6,6 +7,27 @@ import {
   HydrationBoundary,
   dehydrate,
 } from "@tanstack/react-query";
+
+
+
+type Props = {
+  params: { slug?: string[] };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const tag = params.slug?.[0] || 'All';
+  return {
+    title: `Notes - ${tag}`,
+    description: `Список нотаток, відфільтрованих за тегом: ${tag}`,
+    openGraph: {
+      title: `Notes - ${tag}`,
+      description: `Список нотаток, відфільтрованих за тегом: ${tag}`,
+      url: `https://your-vercel-url.vercel.app/notes/filter/${tag}`,
+      images: ['https://ac.goit.global/fullstack/react/notehub-og-meta.jpg'],
+    },
+  };
+}
+
 
 export default async function App() {
   const queryClient = new QueryClient();
