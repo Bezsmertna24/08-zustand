@@ -18,10 +18,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const tag = params.slug?.[0] || 'All';
   return {
     title: `Notes - ${tag}`,
-    description: `Список нотаток, відфільтрованих за тегом: ${tag}`,
+    description: `List of notes filtered by tag: ${tag}`,
     openGraph: {
       title: `Notes - ${tag}`,
-      description: `Список нотаток, відфільтрованих за тегом: ${tag}`,
+      description: `List of notes filtered by tag: ${tag}`,
       url: `https://your-vercel-url.vercel.app/notes/filter/${tag}`,
       images: ['https://ac.goit.global/fullstack/react/notehub-og-meta.jpg'],
     },

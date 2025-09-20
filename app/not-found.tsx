@@ -1,8 +1,8 @@
 "use client";
 import { Metadata } from "next";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
-import css from "./Home.module.css";
+// import { useEffect } from "react";
+// import { useRouter } from "next/navigation";
+import css from "./not-found.module.css";
 
 export default function NotFound() {
   return (
