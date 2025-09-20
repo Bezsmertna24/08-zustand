@@ -14,10 +14,10 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: 'NoteHub',
-  description: 'NoteHub — додаток для створення та керування нотатками',
+  description: 'NoteHub — an application for creating and managing notes',
   openGraph: {
     title: 'NoteHub',
-    description: 'NoteHub — додаток для створення та керування нотатками',
+    description: 'NoteHub — an application for creating and managing notes',
     url: 'https://your-vercel-url.vercel.app',
     images: ['https://ac.goit.global/fullstack/react/notehub-og-meta.jpg'],
   },
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={roboto.variable}>
       <body>
         <Providers>
           <Header />
