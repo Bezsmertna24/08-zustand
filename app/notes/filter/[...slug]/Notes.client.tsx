@@ -20,7 +20,6 @@ export default function App() {
   const [page, setPage] = useState(1);
   const [isModalOpen, setModalOpen] = useState(false);
 
-  const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
 
   useEffect(() => {
@@ -61,12 +60,13 @@ export default function App() {
           <NoteList notes={data.notes} />
         )}
 
-        {/* {isModalOpen && (
+        {isModalOpen && (
           <Modal onClose={closeModal}>
-            <NoteForm onClose={closeModal} />
+            <NoteForm />
           </Modal>
-        )} */}
+        )}
       </main>
     </div>
   );
 }
+
