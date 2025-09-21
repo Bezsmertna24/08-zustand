@@ -9,19 +9,21 @@ const headers= {
   'Authorization': `Bearer ${NOTEHUB_TOKEN}`,
 };
 
-interface NoteResponse {
+ export interface NoteResponse {
     notes: Note[];
     totalPages: number;
 }
 
-export async function fetchNotes (page: number, userQuery: string=""): Promise<NoteResponse> {
+
+export async function fetchNotes (page: number, userQuery: string="", tag?: string): Promise<NoteResponse> {
     
     const response = await axios.get<NoteResponse>(LINK,
         {
             params: {
-                search: userQuery,
+                search: userQuery || undefined,
                 page: page,
                 perPage: 12,
+                tag: tag || undefined,
             },
             headers,
         });
