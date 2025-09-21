@@ -1,6 +1,6 @@
-import css from "./NoteClient.module.css";
+import css from "./NotesClient.module.css";
 import type { Metadata } from 'next';
-import NoteListClient from "./Notes.client";
+import  NoteListClient  from "./Notes.client";
 import { fetchNotes } from "@/lib/api";
 import {
   QueryClient,
